@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style type="text/css">
+
+		body {font-family: Arial, Helvetica, sans-serif;}
+
+		h2{
+			text-align: center;
+		}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+button {
+  background-color: #04AA6D;
+  font-size: 15px;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding: 16px;
+}
+
+	</style>
+</head>
+<body>
+
+  <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">NS Project</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-gray-900" href="home.html">Home</a>
+        <a class="mr-5 hover:text-gray-900" href="signin.html">Register</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <div class="container">
+    <h2><b>SIGN UP</b></h2>
+    <form id="form" class="form">
+
+            <input type="text" name="eame" id="name" placeholder="Name" required>
+
+            <input type="text" name="email" id="email" placeholder="Email Address" required>
+
+            <input type="password" name="psw" id="psw" placeholder="Password" required>
+
+            <button type="submit">Sign Up</button>
+        </div>
+     </form>
+</div>
+
+<footer class="text-gray-600 body-font">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span class="ml-3 text-xl">NS Project</span>
+    </a>
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2021 NS Project—
+      <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@Saqib Ahmed</a>
+    </p>
+  </div>
+</footer>
+
+  <script>
+
+    var form = document.getElementById('form');
+
+    form.addEventListener('submit', (event) => {
+
+      event.preventDefault();
+
+      store();
+
+   })
+
+    function store(){
+
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value;
+    var psw = document.getElementById('psw').value;
+
+    
+   /* var lowerCaseLetters = /[a-z]/g;
+    var upperCaseLetters = /[A-Z]/g;
+    var numbers = /[0-9]/g;
+
+    if(name.value.length() == 0){
+        alert('Please fill in name');
+
+    }
+    else if(email.value.length() == 0){
+        alert('Please fill in email');
+    }
+
+    else if(psw.value.length() == 0){
+        alert('Please fill in password');
+
+    }
+    else if(name.value.length() == 0 && psw.value.length() == 0){
+        alert('Please fill in email and password');
+
+    }else if(psw.value.length() > 8){
+        alert('Max of 8');
+
+    }else if(!psw.value.match(numbers)){
+        alert('please add 1 number');
+
+    }else if(!psw.value.match(upperCaseLetters)){
+        alert('please add 1 uppercase letter');
+
+    }else if(!psw.value.match(lowerCaseLetters)){
+        alert('please add 1 lovercase letter');
+
+    }else{*/
+
+        localStorage.setItem('name', name);
+        localStorage.setItem('email', email);
+        localStorage.setItem('psw', psw);
+
+
+        console.log(name);
+        console.log(email);
+        console.log(psw);
+        alert('Your account has been created');
+        window.location='login.html';
+        
+
+    }
+
+  </script>
+
+</body>
+</html>
